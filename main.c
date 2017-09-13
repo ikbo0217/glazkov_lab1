@@ -11,7 +11,7 @@ void convert(double value, char type){
       
       printf("%.2f C:\n", value);
       printf("%.2f K\n", ck);
-      printf("%.2f F", cf);
+      printf("%.2f F\n", cf);
     }
   } else if(type == 'F'){
     if(value <= -459.67){
@@ -22,7 +22,7 @@ void convert(double value, char type){
       
       printf("%.2f F:\n", value);
       printf("%.2f C\n", fc);
-      printf("%.2f K", fk);
+      printf("%.2f K\n", fk);
     }
   } else if(type == 'K'){
     if(value <= 0){
@@ -33,7 +33,7 @@ void convert(double value, char type){
       
       printf("%.2f K:\n", value);
       printf("%.2f C\n", kc);
-      printf("%.2f F", kf);
+      printf("%.2f F\n", kf);
     }
   } else {
     printf("Type must be K, F or C");
@@ -48,9 +48,9 @@ int main(int argc, char* argv[]){
     /* If only one argument passed, convert to all possible types */
     double value = atof(argv[1]);
     convert(value, 'C');
-    printf("\n\n");
+    printf("\n");
     convert(value, 'F');
-    printf("\n\n");
+    printf("\n");
     convert(value, 'K');
   } else if(argc == 3){
     /* If both arguments are passed, convert to needed type */
