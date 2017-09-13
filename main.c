@@ -3,28 +3,40 @@
 
 void convert(double value, char type){
   if(type == 'C'){
-    double ck = value + 273.15;
-    double cf = (value * 9 / 5) + 32;
-    
-    printf("%.2f C:\n", value);
-    printf("%.2f K\n", ck);
-    printf("%.2f F", cf);
+    if(value <= -273.15){
+      printf("Celsius: Temperature value is below(equal to) absolute zero");
+    } else {
+      double ck = value + 273.15;
+      double cf = (value * 9 / 5) + 32;
+      
+      printf("%.2f C:\n", value);
+      printf("%.2f K\n", ck);
+      printf("%.2f F", cf);
+    }
   } else if(type == 'F'){
-    double fc = (value - 32) * 5 / 9;
-    double fk = (value + 459.67) * 5 / 9;
-    
-    printf("%.2f F:\n", value);
-    printf("%.2f C\n", fc);
-    printf("%.2f K", fk);
+    if(value <= -459.67){
+      printf("Fahrenheit: Temperature value is below(equal to) absolute zero");
+    } else {
+      double fc = (value - 32) * 5 / 9;
+      double fk = (value + 459.67) * 5 / 9;
+      
+      printf("%.2f F:\n", value);
+      printf("%.2f C\n", fc);
+      printf("%.2f K", fk);
+    }
   } else if(type == 'K'){
-    double kc = value - 273.15;
-    double kf = (value / 5 * 9) - 459.67;
-    
-    printf("%.2f K:\n", value);
-    printf("%.2f C\n", kc);
-    printf("%.2f F", kf);
+    if(value <= 0){
+      printf("Kelvin: Temperature value is below(equal to) absolute zero");
+    } else {
+      double kc = value - 273.15;
+      double kf = (value / 5 * 9) - 459.67;
+      
+      printf("%.2f K:\n", value);
+      printf("%.2f C\n", kc);
+      printf("%.2f F", kf);
+    }
   } else {
-    printf("type must be K, F or C");
+    printf("Type must be K, F or C");
   }
 }
 
